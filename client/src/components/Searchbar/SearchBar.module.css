@@ -1,17 +1,17 @@
-.containerAll{
+.containerAll {
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
     align-items: center;
 }
-.login{
+
+.login {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form {
     display: flex;
     gap: .5rem;
-}
-.form{
-    display: flex;
-    gap: .5rem;
-}
-.input{
-    padding: .3rem;
 }

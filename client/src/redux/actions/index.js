@@ -114,15 +114,16 @@ export function searchName(word) {
   return function (dispatch, getState) {
     // primero hacemos el llamado a nuestra store, en donde tengamos todos los productos
 
-    const allProducts = getState().allProducts; //suponiendo que el arr del store se llame products
-
+    const allProducts = getState().allProducts; 
+    console.log(allProducts);
     // realizamos el filtrado
 
     console.log(`estas buscando: ${word}`);
-    const res = allProducts.filter((element) => element.includes(word));
-    dispatch({
+    const res = allProducts.filter((element) => element.name.toLowerCase().includes(word));
+    console.log(res)
+    return dispatch({
       type: "SEARCH_BAR",
-      paylaod: res,
+      payload: res,
     });
   };
 }

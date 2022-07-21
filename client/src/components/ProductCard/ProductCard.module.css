@@ -9,24 +9,22 @@ a {
 
 .cardContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    border: 0px solid grey;
+    border-radius: 5px;
+    gap: .5rem;
+    height: 100px;
+    width: 400px;
+    color: black;
+    font-size: 12px;
+    justify-content: space-around;
     align-items: center;
-    background-color: gray;
+    -webkit-box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.46);
+    box-shadow: 1px 4px 4px 2px rgba(0, 0, 0, 0.46);
+    padding: .2rem;
 }
 
-.name {
-    font-size: 25px;
-    font-weight: 900;
-    color: black
-}
-
-.image {
-    width: 10vw;
-}
-
-.price {
-    font-size: 22px;
-    font-weight: 600;
-    color: black
+.image{
+    height: 80%;
 }

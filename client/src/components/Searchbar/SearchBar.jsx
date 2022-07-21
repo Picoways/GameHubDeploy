@@ -24,20 +24,20 @@ function SearchBar() {
   return (
     <div className={styles.containerAll}>
       <Link to="/">
-        <img src="#" alt="img" />
+        <img src="https://compragamer.net/assets/img/logo-fix.png" alt="img" />
       </Link>
       <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
         <input
           onChange={(e) => setSearchProduct(e.target.value)}
           value={searchProduct}
           className={styles.input}
-          placeholder="Search someone products..."
+          placeholder="Search product"
         />
-        <button>Search</button>
+        <button className="button">Search</button>
       </form>
       <div className={styles.login}>
-        <button>Sign In</button>
-        <img alt="img" src="#" />
+        <button className="button">Sign In</button>
+        <i class="fa-solid fa-cart-shopping"></i>
       </div>
     </div>
   );

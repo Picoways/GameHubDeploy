@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Help from "./components/Help/Help";
 import Details from "./components/Details/Details"
 import ProductsList from "./components/ProductsList/ProductsList"
+import "./global.css"
 
 export default function App() {
   return (

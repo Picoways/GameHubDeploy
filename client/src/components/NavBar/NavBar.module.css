@@ -5,19 +5,20 @@ body {
 .container {
   display: flex;
   justify-content: space-around;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #FD611A;
   font-size: 12px;
   text-decoration: none;
   padding: 10px;
-  color: black;
   border-bottom: 1px solid black;
+  text-decoration: none;
 }
 
 .text {
-  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
 }
 
-.text:visited {
+/* .text:visited {
   color: black;
   text-decoration: none;
-}
+} */
