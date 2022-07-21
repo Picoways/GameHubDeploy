@@ -390,3 +390,7 @@ template {
   box-shadow: 0px 4px 4px 0px #156DBF;
   padding: .3rem;
 }
+
+.button-disabled{
+  display: none;
+}
