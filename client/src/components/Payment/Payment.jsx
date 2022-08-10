@@ -165,7 +165,7 @@ const CheckoutForm = ({ cart, amount, emailUser }) => {
       const { id } = paymentMethod;
       try {
         const { data } = await axios.post(
-          'http://localhost:3000/api/checkout',
+          'https://gamehubapi.vercel.app/api/checkout',
           {
             id,
             amount,
@@ -175,7 +175,7 @@ const CheckoutForm = ({ cart, amount, emailUser }) => {
         );
 
         const searchUserForEmail = await axios.get(
-          'http://localhost:3000/api/checkoutEmail',
+          'https://gamehubapi.vercel.app/api/checkoutEmail',
           {
             email: emailUser,
           }
@@ -186,7 +186,7 @@ const CheckoutForm = ({ cart, amount, emailUser }) => {
           const array2 = cart.map((e) => e.quantity);
 
           while (array.length > 0) {
-            await axios.put(`http://localhost:3000/product/${array[0]}`, {
+            await axios.put(`https://gamehubapi.vercel.app/product/${array[0]}`, {
               quantity: array2[0],
             });
             array.shift();
@@ -202,7 +202,7 @@ const CheckoutForm = ({ cart, amount, emailUser }) => {
           navigate('/');
         }
 
-        await axios.get('http://localhost:3000/api/checkoutEmail', {
+        await axios.get('https://gamehubapi.vercel.app/api/checkoutEmail', {
           email: emailUser,
         });
 

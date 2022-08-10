@@ -33,7 +33,7 @@ function Reviews({ id }) {
       comment: "",
       commentRating: 1,
     });
-    await axios.put("http://localhost:3000/comments", input)
+    await axios.put("https://gamehubapi.vercel.app/comments", input)
   }
 
   function onClickStar(e) {

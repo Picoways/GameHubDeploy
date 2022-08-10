@@ -18,7 +18,7 @@ export default function UserProfile() {
 
   const handleClick = async (e, email) => {
     e.preventDefault();
-    const { data } = await axios.put(`http://localhost:3000/forcepassword`, { email });
+    const { data } = await axios.put(`https://gamehubapi.vercel.app/forcepassword`, { email });
     setMsg(data.msg)
 
   };

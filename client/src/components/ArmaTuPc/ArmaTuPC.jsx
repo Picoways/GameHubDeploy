@@ -49,7 +49,7 @@ export default function ArmaTuPC() {
     if (autho === 'admin' || autho === 'owner') {
       // return alert('borrenme algun dia');
     }
-    let json = await axios.get('http://localhost:3000/product/' + id);
+    let json = await axios.get('https://gamehubapi.vercel.app/product/' + id);
     const a = localStorage.getItem('Carrito')
       ? JSON.parse(localStorage.getItem('Carrito'))
       : [];

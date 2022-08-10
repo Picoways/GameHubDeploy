@@ -106,9 +106,9 @@ function LoginPage() {
 
   const LoginUser = async (payload) => {
     try {
-      const user = await axios.post(`http://localhost:3000/accounts`, payload);
+      const user = await axios.post(`https://gamehubapi.vercel.app/accounts`, payload);
       if (user.status === 201) {
-        await axios.post("http://localhost:3000/login", payload).then((r) => {
+        await axios.post("https://gamehubapi.vercel.app/login", payload).then((r) => {
           {localStorage.setItem("usuario", r.data.tokenSession)}
           if(r.data.data.accountState === "banned") {
              return swal("Error", "Tu cuenta se encuentra en estado de suspensión", "error")

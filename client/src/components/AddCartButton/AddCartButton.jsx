@@ -24,7 +24,7 @@ function AddCartButton({ id, stock, setRefresh, refresh }) {
       return
     }
     if (!karting.map((a) => a._id).includes(id)) {
-        let json = await axios.get("http://localhost:3000/product/" + id);
+        let json = await axios.get("https://gamehubapi.vercel.app/product/" + id);
     const a = localStorage.getItem("Carrito") ? JSON.parse(localStorage.getItem("Carrito")) : []
     a.push(json.data)
     localStorage.setItem("Carrito", JSON.stringify(a))

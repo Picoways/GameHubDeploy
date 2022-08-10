@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 
 export function getProducts() {
   return async function (dispatch) {
-    let json = await axios.get('https://gamehub-chi.vercel.app/home', {});
+    let json = await axios.get('https://gamehubapi.vercel.app/home', {});
     return dispatch({
       type: 'GET_PRODUCTS',
       payload: json.data,
@@ -13,7 +13,7 @@ export function getProducts() {
 
 export function getUsers() {
   return async function (dispatch) {
-    let json = await axios.get('https://gamehub-chi.vercel.app/accounts', {});
+    let json = await axios.get('https://gamehubapi.vercel.app/accounts', {});
     return dispatch({
       type: 'GET_USERS',
       payload: json.data,
@@ -24,7 +24,7 @@ export function getUsers() {
 export function getUserPayments(email) {
   return async function (dispatch) {
     let r = await axios.get(
-      'https://gamehub-chi.vercel.app/api/checkoutEmail?email=' + email
+      'https://gamehubapi.vercel.app/api/checkoutEmail?email=' + email
     );
     return dispatch({
       type: 'GET_USER_PAYMENTS',
@@ -36,8 +36,8 @@ export function getUserPayments(email) {
 export function getProductDetails(id) {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/product/' + id);
-      await axios.put('https://gamehub-chi.vercel.app/product/' + id, {
+      let json = await axios.get('https://gamehubapi.vercel.app/product/' + id);
+      await axios.put('https://gamehubapi.vercel.app/product/' + id, {
         views: json.data.views + 1,
       });
       return dispatch({
@@ -53,7 +53,7 @@ export function getProductDetails(id) {
 export function getPaymentHistory(id) {
   return async function (dispatch) {
     let json = await axios.get(
-      'https://gamehub-chi.vercel.app/api/paymentHistory/' + id
+      'https://gamehubapi.vercel.app/api/paymentHistory/' + id
     );
     return dispatch({
       type: 'GET_PAYMENT_HISTORY',
@@ -85,14 +85,14 @@ export function sortRating(rating) {
 
 export function deleteProduct(id) {
   return async function (dispatch) {
-    await axios.delete('https://gamehub-chi.vercel.app/product/' + id);
+    await axios.delete('https://gamehubapi.vercel.app/product/' + id);
   };
 }
 
 export function addToCart(id) {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/product/' + id);
+      let json = await axios.get('https://gamehubapi.vercel.app/product/' + id);
       if (json.data.stock > 0) {
         swal('Listo!', 'El producto fue agregado al carrito!', 'success');
         return dispatch({
@@ -113,7 +113,7 @@ export function addToCart(id) {
 
 export function addToBuilder(id) {
   return async function (dispatch) {
-    let json = await axios.get('https://gamehub-chi.vercel.app/product/' + id)
+    let json = await axios.get('https://gamehubapi.vercel.app/product/' + id)
     return dispatch({
       type: "ADD_TO_BUILDER",
       payload: json.data
@@ -139,9 +139,9 @@ export function modifyCart(carrito) {
 export function addToWishList(id, idUser) {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/product/' + id);
+      let json = await axios.get('https://gamehubapi.vercel.app/product/' + id);
       await axios.put(
-        'https://gamehub-chi.vercel.app/accounts/wishList/' + idUser,
+        'https://gamehubapi.vercel.app/accounts/wishList/' + idUser,
         json.data
       );
       return dispatch({
@@ -158,7 +158,7 @@ export function removeFromWishList(idUser, id) {
   return async function (dispatch) {
     try {
       await axios.put(
-        'https://gamehub-chi.vercel.app/accounts/removeFromWishList/' + idUser,
+        'https://gamehubapi.vercel.app/accounts/removeFromWishList/' + idUser,
         { id }
       );
       return dispatch({
@@ -174,7 +174,7 @@ export function removeFromWishList(idUser, id) {
 export function filterProducts() {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/carousel');
+      let json = await axios.get('https://gamehubapi.vercel.app/carousel');
       return dispatch({
         type: 'CAROUSEL',
         payload: json.data,
@@ -188,7 +188,7 @@ export function filterProducts() {
 export function filterProductsByViews() {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/mostViewed');
+      let json = await axios.get('https://gamehubapi.vercel.app/mostViewed');
       return dispatch({
         type: 'MOST_VIEWED',
         payload: json.data,
@@ -202,7 +202,7 @@ export function filterProductsByViews() {
 export function filterProductsByDate() {
   return async function (dispatch) {
     try {
-      let json = await axios.get('https://gamehub-chi.vercel.app/recentlyAdded');
+      let json = await axios.get('https://gamehubapi.vercel.app/recentlyAdded');
       return dispatch({
         type: 'RECENTLY_ADDED',
         payload: json.data,
@@ -232,7 +232,7 @@ export function searchName(word) {
 
 export function searchUserByUsername(payload) {
   return async function (dispatch) {
-    let r = await axios.post('https://gamehub-chi.vercel.app/findUser', {
+    let r = await axios.post('https://gamehubapi.vercel.app/findUser', {
       username: payload,
     });
     return dispatch({
@@ -245,7 +245,7 @@ export function searchUserByUsername(payload) {
 export function postProduct(payload) {
   return async function (dispatch) {
     const response = await axios.post(
-      'https://gamehub-chi.vercel.app/createProduct',
+      'https://gamehubapi.vercel.app/createProduct',
       payload
     );
     return response;
@@ -254,7 +254,7 @@ export function postProduct(payload) {
 
 export function getCategories() {
   return async function (dispatch) {
-    let json = await axios.get('https://gamehub-chi.vercel.app/categories', {});
+    let json = await axios.get('https://gamehubapi.vercel.app/categories', {});
     return dispatch({
       type: 'GET_CATEGORIES',
       payload: json.data,
@@ -264,7 +264,7 @@ export function getCategories() {
 
 export function getBrands() {
   return async function (dispatch) {
-    let json = await axios.get('https://gamehub-chi.vercel.app/brands', {});
+    let json = await axios.get('https://gamehubapi.vercel.app/brands', {});
     return dispatch({
       type: 'GET_BRANDS',
       payload: json.data,
@@ -281,7 +281,7 @@ export function clearPage() {
 export function postUser(payload) {
   return async function (dispatch) {
     const response = await axios.post(
-      'https://gamehub-chi.vercel.app/register',
+      'https://gamehubapi.vercel.app/register',
       payload
     );
     return response;
@@ -291,7 +291,7 @@ export function postUser(payload) {
 export function postUsersGoogle(payload) {
   return async function (dispatch) {
     const responseGoogle = await axios.post(
-      'https://gamehub-chi.vercel.app/registerGoogle',
+      'https://gamehubapi.vercel.app/registerGoogle',
       payload
     );
     return responseGoogle;
@@ -301,7 +301,7 @@ export function postUsersGoogle(payload) {
 export function editProduct(payload, id) {
   return async function (dispatch) {
     const edit = await axios.put(
-      'https://gamehub-chi.vercel.app/product/' + id,
+      'https://gamehubapi.vercel.app/product/' + id,
       payload
     );
     return edit;
@@ -310,7 +310,7 @@ export function editProduct(payload, id) {
 
 export function editUser(payload, id) {
   return async function (dispatch) {
-    const editUs = await axios.put('https://gamehub-chi.vercel.app/accounts/' + id, payload
+    const editUs = await axios.put('https://gamehubapi.vercel.app/accounts/' + id, payload
     );
     return editUs
   };
@@ -318,7 +318,7 @@ export function editUser(payload, id) {
 
 // export function finishOrder(emailUser, items, total){
 //   return async function (dispatch){
-//     const responsePay = await axios.post("https://gamehub-chi.vercel.app/api/paymentMerpago", {emailUser, items, total})
+//     const responsePay = await axios.post("https://gamehubapi.vercel.app/api/paymentMerpago", {emailUser, items, total})
 //     // return responsePay
 //     return dispatch({
 //       type: "FINISH_ORDER",
@@ -330,7 +330,7 @@ export function editUser(payload, id) {
 export const finishOrder = function (emailUser, items /*, total*/) {
   return function (dispatch) {
     return axios
-      .post('https://gamehub-chi.vercel.app/api/paymentMerpago', {
+      .post('https://gamehubapi.vercel.app/api/paymentMerpago', {
         emailUser,
         items /*, total*/,
       })
@@ -342,7 +342,7 @@ export const finishOrder = function (emailUser, items /*, total*/) {
 export function updateUserState(payload, id) {
   return async function (dispatch) {
     const ban = await axios.put(
-      'https://gamehub-chi.vercel.app/accounts/' + id,
+      'https://gamehubapi.vercel.app/accounts/' + id,
       payload
     );
     return ban;
@@ -352,7 +352,7 @@ export function updateUserState(payload, id) {
 export function adminUser(payload, id) {
   return async function (dispatch) {
     const ban = await axios.put(
-      'https://gamehub-chi.vercel.app/accounts/' + id,
+      'https://gamehubapi.vercel.app/accounts/' + id,
       payload
     );
     return ban;
@@ -388,7 +388,7 @@ export function modifyQuantityDown(id) {
 export function changeState(payload) {
   return async function (dispatch) {
     const updated = await axios.put(
-      'https://gamehub-chi.vercel.app/updatestate',
+      'https://gamehubapi.vercel.app/updatestate',
       payload
     );
     return updated;
@@ -397,14 +397,14 @@ export function changeState(payload) {
 
 export function searchStatePayment() {
   return async function () {
-    const data = await axios.get('https://gamehub-chi.vercel.app/filterPaymentState');
+    const data = await axios.get('https://gamehubapi.vercel.app/filterPaymentState');
     return data;
   };
 }
 
 export function getTotalPayments() {
   return async function (dispatch) {
-    const json = await axios.get('https://gamehub-chi.vercel.app/filterPaymentState');
+    const json = await axios.get('https://gamehubapi.vercel.app/filterPaymentState');
     return dispatch({
       type: 'TOTAL_PAYMENTS',
       payload: json.data,
@@ -415,7 +415,7 @@ export function getTotalPayments() {
 export function getUserById(id) {
   return async function (dispatch) {
     try {
-      const { data } = await axios.get(`https://gamehub-chi.vercel.app/accounts/${id}`);
+      const { data } = await axios.get(`https://gamehubapi.vercel.app/accounts/${id}`);
       return dispatch({
         type: 'GET_USER_DETAILS',
         payload: data,
@@ -430,7 +430,7 @@ export function getPaymentHistoryById(id) {
   return async function (dispatch) {
     try {
       const { data } = await axios.get(
-        `https://gamehub-chi.vercel.app/api/paymentHistoryId/${id}`
+        `https://gamehubapi.vercel.app/api/paymentHistoryId/${id}`
       );
       return dispatch({
         type: 'GET_PAYMENT_BY_ID',
