@@ -137,7 +137,7 @@ export default function CreateProduct() {
                 {
                     !input.name || !input.price || !input.stock || !input.mainImage || !input.category || !input.brands || !input.description
                         ?
-                        <button className="button" onClick={() => { swal("Error", "Debes completar todos los campos", "error"); setErrorTrue(!false) }}>Añadir producto</button>
+                        <button className="button" onClick={async () => { await swal("Error", "Debes completar todos los campos", "error"); setErrorTrue(!false) }}>Añadir producto</button>
                         :
                         <button className="button" onClick={(e) => handleSubmit(e)}>Añadir producto</button>
                 }
