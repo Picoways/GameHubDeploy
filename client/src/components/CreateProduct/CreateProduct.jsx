@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { postProduct, getProducts } from "../../redux/actions";
 import Style from "./CreateProduct.module.css"
+import swal from "sweetalert";
 /* import { State } from "@splidejs/splide"; */
 
 export default function CreateProduct() {
@@ -63,8 +63,7 @@ export default function CreateProduct() {
             description: "",
         })
         dispatch(getProducts())
-        alert("Producto agregado con éxito")
-        navigate(0)
+        swal("Ya está", "El producto fue agregado con éxito", "success")
     }
 
     const validate = (input) => {
