@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useJwt } from "react-jwt";
 import { editUser, getUserPayments, getUsers } from "../../redux/actions";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Style from "./Profile.module.css"
 import swal from 'sweetalert';
 import loader from '../../img/loader.gif'
@@ -19,6 +19,7 @@ export default function Profile() {
   const userExtraInfo = users.find(e => e.email === email)
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const [edit, setEdit] = useState({
     phoneNumber: "",
@@ -54,7 +55,7 @@ export default function Profile() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!edit.phoneNumber) {
       edit.phoneNumber = userExtraInfo.phoneNumber
@@ -68,9 +69,10 @@ export default function Profile() {
     if (!edit.zipCode) {
       edit.zipCode = userExtraInfo.zipCode
     }
-    dispatch(editUser(edit, id));
+    await dispatch(editUser(edit, id));
     setShowInputs("")
-    swal("Listo!", "Tu informacion fue modificada correctamente", "success");
+    await swal("Listo!", "Tu informacion fue modificada correctamente", "success");
+    navigate(0)
     dispatch(getUsers())
   }
 
