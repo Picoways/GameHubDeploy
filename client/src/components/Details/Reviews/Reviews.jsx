@@ -36,6 +36,7 @@ function Reviews({ id }) {
       commentRating: 1,
     });
     await axios.put("https://gamehubapi.vercel.app/comments", input)
+    navigate(0)
   }
 
   function onClickStar(e) {
@@ -95,7 +96,7 @@ function Reviews({ id }) {
             onChange={(e) => handleChange(e)}
           />
           <button 
-            style={{textTransform: "capitalize"}} className="btnDash" type="submit" onClick={() => navigate(0)}>Enviar reseña</button>
+            style={{textTransform: "capitalize"}} className="btnDash" type="submit">Enviar reseña</button>
         </div>
       </form>
     </div>
