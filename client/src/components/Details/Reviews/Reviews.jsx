@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import s from "./Reviews.module.css";
 import axios from "axios"
 import { useJwt } from "react-jwt"
+import { useNavigate } from "react-router-dom";
 
 function Reviews({ id }) {
   const [hover, setHover] = useState(null);
@@ -11,6 +12,7 @@ function Reviews({ id }) {
 
   let usernameTokened = decodedToken?.username;
 
+  const navigate = useNavigate()
 
   const [input, setInput] = useState({
     id: id,
@@ -93,7 +95,7 @@ function Reviews({ id }) {
             onChange={(e) => handleChange(e)}
           />
           <button 
-            style={{textTransform: "capitalize"}} className="btnDash" type="submit">Enviar reseña</button>
+            style={{textTransform: "capitalize"}} className="btnDash" type="submit" onCLick={() => navigate(0)}>Enviar reseña</button>
         </div>
       </form>
     </div>
