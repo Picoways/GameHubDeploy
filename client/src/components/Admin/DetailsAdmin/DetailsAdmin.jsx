@@ -69,7 +69,7 @@ export default function DetailsAdmin(props) {
     }
     dispatch(editProduct(edit, id));
     swal("Listo!","El producto fue modificado correctamente","success");
-    navigate(-1);
+    navigate("/Dashboard");
   };
 
   return (
