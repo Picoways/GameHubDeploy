@@ -20,7 +20,7 @@ export const postProduct = async (req, res) => {
   try {
     if (req.files) {
       if (req.files.image.length > 0) {
-        resultImages = req.files.image.map(image => uploadImage(image.tempFilePath))
+        resultImages = req.files.image.map(image => await uploadImage(image.tempFilePath))
         req.files.image.map(image => fs.remove(image.tempFilePath))
 
         const arrayPromiseURLS = await Promise.all(resultImages)
