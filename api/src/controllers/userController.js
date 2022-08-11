@@ -75,7 +75,7 @@ export const postUsersGoogle = async (req, res) => {
       role: role || 'user',
     });
 
-    sendMail(email, username)
+    await sendMail(email, username)
       .then((result) => console.log('email sended'))
       .catch((err) => console.log(err));
 
