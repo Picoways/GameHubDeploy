@@ -61,7 +61,7 @@ export default function CustomizedAccordions() {
         <AccordionDetails>
           <Typography>
             <p style={{color:"blue", fontWeight:"900"}}>¿Cómo realizo un pedido?</p>
-          Solo tenés que seleccionar todos los productos que deseas adquirir. Seguidamente, en el carrito de compras, para conocer el costo del envío colocás tu código postal en el recuadro correspondiente, elegís la mensajería de tu preferencia y debajo seleccionas la forma de pago. Luego hacés clic en el botón COMPRAR y podés acceder como cliente (si ya tenés cuenta en Compra Gamer) o crear un cliente nuevo. Por último, completás los pasos brindados por el asistente, hasta confirmar la compra. Se te asignará un número de pedido y se mostrarán los datos del mismo. También enviaremos un mail a tu correo electrónico registrado con los detalles del pedido realizado.
+          Solo tenés que seleccionar todos los productos que deseas adquirir. Seguidamente, en el carrito de compras, para conocer el costo del envío colocás tu código postal en el recuadro correspondiente, elegís la mensajería de tu preferencia y debajo seleccionas la forma de pago. Luego hacés clic en el botón COMPRAR y podés acceder como cliente (si ya tenés cuenta en GameHub) o crear un cliente nuevo. Por último, completás los pasos brindados por el asistente, hasta confirmar la compra. Se te asignará un número de pedido y se mostrarán los datos del mismo. También enviaremos un mail a tu correo electrónico registrado con los detalles del pedido realizado.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -105,7 +105,7 @@ export default function CustomizedAccordions() {
         <AccordionDetails>
           <Typography>
           <p style={{color:"blue", fontWeight:"900"}}>¿Cómo gestiono el envío de mi pedido?</p>
-          En primer lugar, para conocer el costo del envío, una vez al agregues al carrito tu compra, solo debes colocar tu código postal en el recuadro correspondiente, seleccionar la mensajería de tu preferencia y elegir si deseas el retiro en alguna sucursal o la entrega a domicilio. Actualmente realizamos envíos a todo el país través de Oca y Andreani; y si te encontrás en CABA o alrededores, podrás seleccionar el servicio de Mensajería Privada que es exclusivo de Compra Gamer. Tené en cuenta que, para calcular el costo del envío, se toman en consideración tanto las dimensiones y peso del paquete como la distancia de la localidad de entrega.
+          En primer lugar, para conocer el costo del envío, una vez al agregues al carrito tu compra, solo debes colocar tu código postal en el recuadro correspondiente, seleccionar la mensajería de tu preferencia y elegir si deseas el retiro en alguna sucursal o la entrega a domicilio. Actualmente realizamos envíos a todo el país través de Oca y Andreani; y si te encontrás en CABA o alrededores, podrás seleccionar el servicio de Mensajería Privada que es exclusivo de GameHub. Tené en cuenta que, para calcular el costo del envío, se toman en consideración tanto las dimensiones y peso del paquete como la distancia de la localidad de entrega.
           </Typography>
         </AccordionDetails>
       </Accordion><Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
@@ -126,7 +126,7 @@ export default function CustomizedAccordions() {
         <AccordionDetails>
           <Typography>
           <p style={{color:"blue", fontWeight:"900"}}>¿Cómo utilizo el servicio de PosVenta y garantías?</p>
-          Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, al final de esta sección contamos con el apartado “Compra Gamer te ayuda. ¿Cuál es tu consulta?” donde debes exponer tu caso, seleccionando el motivo de “Posventa” que se adapte a tu requerimiento y uno de nuestros representantes te ofrecerá la información correspondiente sobre cómo proceder.
+          Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, al final de esta sección contamos con el apartado “GameHub te ayuda. ¿Cuál es tu consulta?” donde debes exponer tu caso, seleccionando el motivo de “Posventa” que se adapte a tu requerimiento y uno de nuestros representantes te ofrecerá la información correspondiente sobre cómo proceder.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -148,7 +148,7 @@ export default function CustomizedAccordions() {
         <AccordionDetails>
           <Typography>
           <p style={{color:"blue", fontWeight:"900"}}>¿Qué son los Gamercoins?</p>
-          Es un beneficio que brinda COMPRA GAMER a sus clientes, premiando sus compras. Se pueden utilizar en descuentos parciales sobre cualquier producto que se encuentre en stock en la web de Compra Gamer 
+          Es un beneficio que brinda GameHub a sus clientes, premiando sus compras. Se pueden utilizar en descuentos parciales sobre cualquier producto que se encuentre en stock en la web de GameHub 
           </Typography>
         </AccordionDetails>
       </Accordion>
