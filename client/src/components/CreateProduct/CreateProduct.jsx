@@ -110,7 +110,7 @@ export default function CreateProduct() {
                     )
                 }
                 <label className={Style.label}>Imagen Principal:</label>
-                <input type="file" name="mainImage" onChange={(e) => setInput({ ...input, mainImage: e.target.files[0] })}></input>
+                <input type="text" name="mainImage" onChange={(e) => setInput({ ...input, mainImage: e.target.value })}></input>
                 <label className={Style.label}>Imagenes Secundarias:</label>
                 <input type="file" multiple name="secondaryImage" onChange={(e) => { setInput({ ...input, secondaryImage: e.target.files }); console.log(e.target.files[0]) }}></input>
                 <input className="input-form" type="text" value={input.category} name="category" placeholder="Categoria" onChange={(e) => handleChange(e)}></input>
@@ -132,7 +132,7 @@ export default function CreateProduct() {
                     )
                 }
                 {
-                    !input.name || !input.price || !input.stock || !input.category || !input.brands || !input.description
+                    !input.name || !input.price || !input.stock || !input.mainImage || !input.category || !input.brands || !input.description
                         ?
                         <button className="button" onClick={async () => { await swal("Error", "Debes completar todos los campos", "error"); setErrorTrue(!false) }}>Añadir producto</button>
                         :
