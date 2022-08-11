@@ -2,11 +2,12 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import Style from "./ProductCardAdmin.module.css";
 import { deleteProduct } from "../../../redux/actions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 export default function ProductCardAdmin({ id, name, price, image }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
     <div className={Style.carouselOrder}>
@@ -36,9 +37,10 @@ export default function ProductCardAdmin({ id, name, price, image }) {
           <button
             className="buttonDelete"
             href="/products"
-            onClick={() => {
+            onClick={async () => {
               dispatch(deleteProduct(id));
-              swal("Eliminado", "El producto ha sido eliminado con éxito", "success")
+              await swal("Eliminado", "El producto ha sido eliminado con éxito", "success")
+              navigate(0)
             }}
           >
             {" "}
