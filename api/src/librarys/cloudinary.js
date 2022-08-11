@@ -8,12 +8,12 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
-export const uploadImage = async (filePath) => {
-return await cloudinary.uploader.upload(filePath, {
+export const uploadImage = (filePath) => {
+return cloudinary.uploader.upload(filePath, {
     folder: 'products'
     })
 }
 
-export const deleteImage = async (id) => {
-    return await cloudinary.uploader.destroy(id)
+export const deleteImage = (id) => {
+    return cloudinary.uploader.destroy(id)
 }
