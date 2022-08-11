@@ -8,7 +8,6 @@ import swal from "sweetalert";
 export default function CreateProduct() {
 
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const [input, setInput] = useState({
         name: "",
