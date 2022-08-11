@@ -38,7 +38,7 @@ export default function CreateProduct() {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const data = new FormData()
         data.append("image", input.mainImage)
@@ -62,7 +62,7 @@ export default function CreateProduct() {
             description: "",
         })
         dispatch(getProducts())
-        swal("Ya está", "El producto fue agregado con éxito", "success")
+        await swal("Ya está", "El producto fue agregado con éxito", "success")
     }
 
     const validate = (input) => {
