@@ -3,10 +3,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const CLIENT_ID =
-  '814477837838-7q4addoiejdkrppc90tfphp1s251gkhn.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
+  '750302300783-b58fv7bkv3pu1lj90qnth50dccnr8pbv.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
 const REFRESH_TOKEN =
-  '1//04kvsRw45datfCgYIARAAGAQSNwF-L9IroEpcRRaYSrtnAukdpwLmC3-0r9ZmRBSObQqVN9wEIT6xAj8_cz9yhwQMWuNdIVqZ1U8';
+  '1//04F70KpNepoiDCgYIARAAGAQSNwF-L9IrUGygK_fOflWBG8Rtfu0SZBttq3L_5e1vS4VW6VLUnM7cZhvztRM8svvl8S97QPlW46A';
 
 export const sendMail = async (
   email,
@@ -23,8 +23,8 @@ export const sendMail = async (
       secure: true,
       auth: {
         type: 'OAuth2',
-        user: 'gaminggamehub1@gmail.com',
-        pass: 'bnuosivrcktmzrtd',
+        user: 'gamehubappweb@gmail.com',
+        pass: 'tqslenybmuzeuted',
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
