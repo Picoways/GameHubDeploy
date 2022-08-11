@@ -76,9 +76,9 @@ export default function CreateProduct() {
         if (!input.stock) {
             errors.stock = "No se puede publicar un producto sin Stock"
         }
-        if (!input.image) {
+        /*if (!input.image) {
             errors.image = "Se requiere una imagen"
-        }
+        }*/
         if (!input.category) {
             errors.category = "El producto no pertenece a ninguna categoria"
         }
@@ -135,7 +135,7 @@ export default function CreateProduct() {
                     )
                 }
                 {
-                    !input.name || !input.price || !input.stock || !input.mainImage || !input.category || !input.brands || !input.description
+                    !input.name || !input.price || !input.stock /*|| !input.mainImage*/ || !input.category || !input.brands || !input.description
                         ?
                         <button className="button" onClick={async () => { await swal("Error", "Debes completar todos los campos", "error"); setErrorTrue(!false) }}>Añadir producto</button>
                         :
