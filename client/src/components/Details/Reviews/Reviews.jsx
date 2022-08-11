@@ -95,7 +95,7 @@ function Reviews({ id }) {
             onChange={(e) => handleChange(e)}
           />
           <button 
-            style={{textTransform: "capitalize"}} className="btnDash" type="submit" onCLick={() => navigate(0)}>Enviar reseña</button>
+            style={{textTransform: "capitalize"}} className="btnDash" type="submit" onClick={() => navigate(0)}>Enviar reseña</button>
         </div>
       </form>
     </div>
