@@ -45,9 +45,6 @@ function Home() {
       <>
         <Splide aria-label="My Favorite Images">
           <SplideSlide>
-            <img className={Style.imgCarousel} src="http://www.karlosperu.com/wp-content/uploads/2019/07/S1920x1080_VGA_GeForce-RTX-20-Super-Series_Banner_2000x720.jpg" alt="img" />
-          </SplideSlide>
-          <SplideSlide>
             <img className={Style.imgCarousel} src="https://www.asus.com/microsite/Graphics-Cards/GeForce-RTX-30-Series/img/bg-header.jpg" alt="img" />
           </SplideSlide>
           <SplideSlide>
